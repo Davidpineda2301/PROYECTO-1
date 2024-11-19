@@ -1,4 +1,5 @@
-import { useState } from "react"
+import {useState} from "react"
+
 import { IconSearch } from "@tabler/icons-react"
 import Description from "./components/Description"
 import Information from "./components/Information"
@@ -11,7 +12,7 @@ function App() {
 const[text,setText]=useState<string>('')
 
 const handleClick = (e: React.ChangeEvent<HTMLInputElement>)=>{
-  setText(e.target.value)
+  setText(e.target.value.toUpperCase())
  
 }
 
