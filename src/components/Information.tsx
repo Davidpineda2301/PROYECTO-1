@@ -1,6 +1,10 @@
 import { useState } from "react"
 
-export default function Information() {
+interface InformationProps {
+  searchTerm : string;
+}
+
+export default function Information({searchTerm} : InformationProps) {
 
     const[buton, setButon] = useState<"Income" | "Balance" | "Cash Flow">("Income");
     
@@ -27,7 +31,9 @@ export default function Information() {
 
   return (
     <div className=" mx-10 min-h-96  gap-5 ">
-    {tabs.map((tab) => (
+      {searchTerm.toUpperCase() === "NTFLX" && (
+        <>
+         {tabs.map((tab) => (
           <button
             key={tab}
             className={`px-4 py-2  ${
@@ -39,8 +45,9 @@ export default function Information() {
           >
             {tab}
           </button>
+         
         ))} 
-         <table className="min-w-full text-center border   border-gray-600 ">
+        <table className="min-w-full text-center border   border-gray-600 ">
           <thead className="bg-slate-900">
            <tr>
             <th className="text-white p-2">Item</th>
@@ -63,6 +70,10 @@ export default function Information() {
           ))}
         </tbody>
       </table>
+        
+       </>
+      )}
+       
 
     </div>
   )
