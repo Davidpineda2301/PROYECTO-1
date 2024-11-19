@@ -9,11 +9,18 @@ import Information from "./components/Information"
 
 function App() {
 
-const[text,setText]=useState<string>('')
+const[text,setText]=useState<string>("") //Input Value
+const [searchTerm, setSearchTerm] = useState<string>("") //Termino a buscar
 
 const handleClick = (e: React.ChangeEvent<HTMLInputElement>)=>{
   setText(e.target.value.toUpperCase())
  
+}
+
+
+const handleSearch  = () =>{
+  setSearchTerm(text) // Actualiza el terminode busqueda al valor del inputS
+  setText('')//Limpia el Input
 }
 
 
@@ -28,13 +35,17 @@ const handleClick = (e: React.ChangeEvent<HTMLInputElement>)=>{
           value={text}
           onChange={handleClick}
           />
-          <IconSearch className="text-white  relative top-1 right-14 rounded-md w-8 h-8  cursor-pointer" stroke={1.25}/>2
+          <IconSearch 
+          className="text-white  relative top-1 right-14 rounded-md w-8 h-8  cursor-pointer" 
+          stroke={1.25}
+          onClick={handleSearch} //Llamamos a la funcion al hacer clic
+          />
         </div>
 
         </header>
           <main className="bg-black max-h-full">
           <Description />
-          <Information />
+          <Information  searchTerm={searchTerm}/>
           Cundisticnp58-njgx
           </main>
     </>
