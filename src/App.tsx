@@ -1,7 +1,5 @@
 import {useState} from "react"
-
 import { IconSearch } from "@tabler/icons-react"
-import Description from "./components/Description"
 import Information from "./components/Information"
 
 
@@ -44,7 +42,6 @@ const handleSearch  = () =>{
 
         </header>
           <main className="bg-black max-h-full">
-          <Description />
           <Information  searchTerm={searchTerm}/>
           Cundisticnp58-njgx
           </main>
