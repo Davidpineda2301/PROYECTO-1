@@ -31,7 +31,7 @@ export default function Information({searchTerm} : InformationProps) {
 
   return (
   
-    <div className="bg-black mx-10   rounded-lg ">
+    <div className=" mx-10   rounded-lg ">
     
       {searchTerm.toUpperCase() === "NTFLX" && (
        <>
@@ -45,7 +45,7 @@ export default function Information({searchTerm} : InformationProps) {
         </div>
       
         <div className=" my-10 ">
-            <div className="bg-black  rounded-lg p-5 ">
+            <div className=" rounded-lg p-5 ">
                 <p className="text-white">Netflix, Inc operates as a streaming entertainment service company.
                    The firm provides subscription service streaming movies and television episodes over the Internet
                     and sending DVDs by mail. It operates through the following segments: Domestic Streaming, International
@@ -79,7 +79,7 @@ export default function Information({searchTerm} : InformationProps) {
         ))} 
         <table className="min-w-full text-center border   border-gray-600 ">
           <thead className="bg-slate-900">
-           <tr>
+           <tr className="bg-slate-900">
             <th className="text-white p-2">Item</th>
             <th className="text-white p-2 ">2024</th>
             <th className="text-white p-2">2023</th>
@@ -90,7 +90,7 @@ export default function Information({searchTerm} : InformationProps) {
         </thead>
         <tbody>
           {data[buton].map((row, index) => (
-            <tr key={index} className="border-b">
+            <tr key={index} className={` ${index % 2 === 0 ?'bg-gray-800' : 'bg-gray-700' }`}>
               {row.map((cell, idx) => (
                 <td key={idx} className="px-4 py-2 text-white">
                   {cell}
@@ -100,8 +100,11 @@ export default function Information({searchTerm} : InformationProps) {
           ))}
         </tbody>
       </table>
-        
+      <button className="text-white mt-5 bg-slate-900 p-5 rounded-lg">Cerrar</button>
+
        </>
+
+
       )}
        
 

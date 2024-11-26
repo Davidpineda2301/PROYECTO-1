@@ -24,10 +24,10 @@ const handleSearch  = () =>{
 
   return (
     <>
-        <header className="bg-black py-8 ">
+        <header className=" py-8 ">
           <div className="  max-w-4xl mx-auto  flex justify-center gap-3 ">
           <input 
-          className="shadow-lg relative  text-white bg-gray-600 w-96 p-2 border border-gray-300 rounded-3xl uppercase"
+          className="shadow-lg relative  text-white bg-gray-600 w-96 p-2 border border-gray-300 rounded-3xl uppercase pl-4 "
           type="text"
           placeholder="Buscar"
           value={text}
