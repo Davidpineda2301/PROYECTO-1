@@ -15,12 +15,14 @@ const handleClick = (e: React.ChangeEvent<HTMLInputElement>)=>{
  
 }
 
-
 const handleSearch  = () =>{
   setSearchTerm(text) // Actualiza el terminode busqueda al valor del inputS
   setText('')//Limpia el Input
 }
 
+const handleButton = ()=>{
+  setSearchTerm("");
+}
 
   return (
     <>
@@ -42,8 +44,8 @@ const handleSearch  = () =>{
 
         </header>
           <main className="bg-black max-h-full">
-          <Information  searchTerm={searchTerm}/>
-          Cundisticnp58-njgx
+          <Information  searchTerm={searchTerm}  onClose={handleButton} />
+        
           </main>
     </>
   )

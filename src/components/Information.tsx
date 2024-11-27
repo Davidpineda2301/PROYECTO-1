@@ -2,16 +2,15 @@ import { useState } from "react"
 
 interface InformationProps {
   searchTerm : string;
+  onClose : () => void;
 }
 
-export default function Information({searchTerm} : InformationProps) {
+export default function Information({searchTerm, onClose} : InformationProps) {
 
-    const[buton, setButon] = useState<"Income" | "Balance" | "Cash Flow">("Income");
-    
+    const[buton, setButon] = useState<"Income" | "Balance" | "Cash Flow">("Income");  
     const tabs: Array<"Income" | "Balance" | "Cash Flow"> = ["Income", "Balance", "Cash Flow"];
    
-
-    const data = {
+        const data = {
         Income: [
           ["Total Assets", "19 B", "29 B", "19 B", "29 B", "19 B"],
           ["Cost of Goods", "19 B", "29 B", "19 B", "29 B", "19 B"],
@@ -100,11 +99,11 @@ export default function Information({searchTerm} : InformationProps) {
           ))}
         </tbody>
       </table>
-      <button className="text-white mt-5 bg-slate-900 p-5 rounded-lg">Cerrar</button>
-
+      <button 
+          onClick={onClose}
+           className="text-white mt-5  bg-slate-900 p-3 rounded-lg hover:bg-slate-700">Cerrar      
+      </button>
        </>
-
-
       )}
        
 
